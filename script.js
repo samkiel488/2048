@@ -164,7 +164,7 @@ function checkGameOver() {
             if (col < 3 && gridArray[row][col] === gridArray[row][col + 1]) return; // If any tile fit merge horizontally, game no finish
         }
     }
-    alert("Game Over!"); // If no move remain, game finish
+    alert("Game Over!\nJust try again, you're not a failure"); // If no move remain, game finish
     stopTimer(); // Stop the timer
 }
 
@@ -172,7 +172,7 @@ function checkWin() {
     for (let row = 0; row < 4; row++) {
         for (let col = 0; col < 4; col++) {
             if (gridArray[row][col] === 2048) { // If any tile reach 2048
-                alert("You Win!"); // Player don win
+                alert("You Win finally! Congrats you'll be getting a gift from SAMKIEL"); // Player don win
                 stopTimer(); // Stop the timer
                 return;
             }
@@ -214,7 +214,8 @@ function stopTimer() {
 
 function getHint() {
     const directions = ['up', 'down', 'left', 'right']; // All possible directions
-    return `Try moving ${directions[Math.floor(Math.random() * directions.length)]}!`; // Suggest one random direction
+    alert("Wait lemme consult the gods \nAbracadabra...🔃");
+    return `The gods have spoken\nMove  ${directions[Math.floor(Math.random() * directions.length)]}!`; // Suggest one random direction
 }
 
 function toggleDarkMode() {
@@ -227,5 +228,5 @@ undoButton.addEventListener('click', undo); // If player click undo button, undo
 hintButton.addEventListener('click', () => alert(getHint())); // If player click hint button, give hint
 themeToggle.addEventListener('click', toggleDarkMode); // If player click dark mode button, toggle dark mode
 
-// Start the game
+// Make we begin the experience hehe
 init();
